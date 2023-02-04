@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <title>Kusal Liyanage</title>
+
+    <!--  CSS Files -->
+  	<link rel="stylesheet" href="assets/css/fontawesome.css" />
+   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  </head>
+
+  <body>
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="assets/images/author-image.jpg" alt="" /></a>
+            </div>
+            <div class="author-content">
+              <h4>Kusal Liyanage</h4>
+              <span>University Student</span>
+            </div>
+            <nav class="main-nav" role="navigation">
+                  <ul class="main-menu">
+               <li><a href="Index.html">My Self</a></li>
+                <li><a href="Education.html">My Education</a></li>
+                <li><a href="Resume.html">My Resume</a></li>
+                <li><a href="Survay.html">Survay</a></li>
+              </ul>
+            </nav>
+            <div class="social-network">
+              <ul class="soial-icons">
+                <li>
+                  <a href="https://www.facebook.com/kusaldananjya25"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-dribbble"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-rss"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="copyright-text">
+              <p>Designed by Kusal Liyanage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+       
+        <!--Survay section -->
+
+
+           <section class="section contact-me" data-section="section4">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Survay</h2>
+            <div class="line-dec"></div>
+            <hr>
+            <span
+              >Do you want to  fill this information</span
+            >
+<br>
+
+  <!--  Radio buttons -->
+            <input type="radio" id="input1"
+                    name="input1">Allow</input><br>
+
+<input type="radio"
+                    id="input2"
+                    name="input2">Deny</input>
+          </div>
+       
+
+          <center>
+              <!--  Main input  table -->
+    <table border="">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <td><input type="text" name="fname" id="fname"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Last Name</th>
+          <td><input type="text" name="lname" id="lname"></td>
+        </tr>
+        <tr>
+          <th>Email Address</th>
+          <td><input type="text" name="email" id="email"></td>
+        </tr>
+
+        <tr>
+          <th>Birthday</th>
+          <td>
+            <input type="date" name="bday" id="bday"  onchange="submitBday()" ></td>
+        </tr>
+
+
+        <tr id="btna">
+          <td colspan="2"><input type="button" name="button" id="btn" value="Submit" onclick="AddRow()"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table border="" id="show">
+        <!-- Output table -->
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th >Birthday</th>
+          
+        </tr>
+      </thead>
+    </table>
+
+      <!--  Age output -->
+    <p>You are</p>
+    <h2 id="resultBday"></h2>
+    <p>Years Old</p>
+  </center>
+  
+
+
+
+
+        </div>
+      </section>
+    </div>
+
+  <!--  Java scripy code for showing out put and calculating age -->
+  <script>
+
+    
+    var list1 = [];
+    var list2 = [];
+    var list3 = [];
+    var list4 = [];
+
+    var n = 1;
+    var x = 0;
+
+function submitBday() {
+    var Q4A = "";
+    var Bdate = document.getElementById('bday').value;
+    var Bday = +new Date(Bdate);
+    Q4A = + ~~((Date.now() - Bday) / (31557600000));
+    var theBday = document.getElementById('resultBday');
+    theBday.innerHTML = Q4A;
+}
+
+
+
+    function AddRow(){
+
+      var AddRown = document.getElementById('show');
+      var NewRow = AddRown.insertRow(n);
+
+      list1[x] = document.getElementById("fname").value;
+      list2[x] = document.getElementById("lname").value;
+      list3[x] = document.getElementById("email").value;
+      list4[x] = document.getElementById("bday").value;
+
+      var cel1 = NewRow.insertCell(0);
+      var cel2 = NewRow.insertCell(1);
+      var cel3 = NewRow.insertCell(2);
+      var cel4 = NewRow.insertCell(3);
+
+      cel1.innerHTML = list1[x];
+      cel2.innerHTML = list2[x];
+      cel3.innerHTML = list3[x];
+      cel4.innerHTML = list4[x];
+
+      n++;
+      x++;
+    }
+
+  </script>
+  
+  <!--  CSS for the table these are internal css -->
+  <style type="text/css">
+    table{
+  margin-top: 0px;
+  text-align: center;
+  background-color: rgba(250,250,250,0.1);
+  border: 1px solid rgba(250,250,250,1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+
+    font-size: 14px;
+    height: 4px;
+    line-height: 40px;
+    width: 500px;
+    padding-left: 0px;
+
+    margin-left: 0px;
+}
+
+#show th, #show td{
+  padding: 13px;
+   margin-top: 0px;
+  text-align: center;
+
+ 
+    border-radius: 10px;
+    margin-bottom: 3px;
+   
+
+    font-size: 14px;
+    height: 2px;
+
+    width: 500px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#btna td input{
+  width: 100px;
+   margin-top: 6px;
+  text-align: center;
+  color: #ffff;
+  background-color: #ff22;
+  border: 1px solid rgba(250,250,250,1);
+    border-radius: 5px;
+    margin-bottom: 8px;
+
+
+    font-size: 25px;
+
+    height: 40px;
+    line-height: 40px;
+   
+    padding-left: 0px;
+    margin-left: 0px;
+}
+  </style>
+
+
+  </body>
+</html>
